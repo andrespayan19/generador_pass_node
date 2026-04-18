@@ -20,7 +20,7 @@ Antes de ejecutar el proyecto, asegúrate de tener instalado Node.js en tu equip
 
 1. Clona el repositorio:
 ```bash
-git clone https://github.com/xxxxx/generador-pass-node.git
+git clone https://github.com/andrespayan19/generador_pass_node.git
 cd generador-pass-node
 ```
 

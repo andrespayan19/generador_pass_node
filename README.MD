@@ -7,7 +7,7 @@ Proyecto desarrollado en Node.js para la generación de contraseñas seguras, or
 ## 📌 Información General
 
 - **Nombre del proyecto:** Generador de Contraseñas Seguras  
-- **Repositorio:** https://github.com/xxxxx/generador-pass-node.git  
+- **Repositorio:** https://github.com/andrespayan19/generador_pass_node.git
 - **Licencia:** MIT  
 - **Tecnología principal:** Node.js  
 - **Versión mínima requerida:** Node.js v16.0  

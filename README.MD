@@ -136,4 +136,57 @@ Este proyecto está bajo la licencia MIT. Puedes usarlo, modificarlo y distribui
 Desarrollado por el equipo técnico.  
 Documentación estructurada a partir de notas del líder técnico.
 
----
+# Diagrama UML
+
+@startuml
+title Generador de Contraseñas Seguras - UML
+
+actor Usuario
+
+package "Proyecto Node.js" {
+
+    class Index {
+        +leerParametros()
+        +generarPassword()
+        +mostrarPassword()
+        +guardarPassword()
+    }
+
+    class GeneradorPassword {
+        -longitud : int
+        -usarSimbolos : boolean
+        -usarNumeros : boolean
+        +crearPassword() : string
+    }
+
+    class Archivo {
+        +guardarEnTXT(password)
+    }
+
+    class Consola {
+        +mostrarMensaje()
+    }
+
+    class Chalk {
+        +green(texto)
+    }
+
+    class FileSystem {
+        +writeFile()
+    }
+
+}
+
+Usuario --> Index : Ejecuta npm start
+
+Index --> GeneradorPassword : Solicita contraseña
+GeneradorPassword --> GeneradorPassword : Genera caracteres aleatorios
+
+Index --> Consola : Mostrar contraseña
+Consola --> Chalk : Aplicar color verde
+
+Index --> Archivo : Guardar contraseña\n(si usa --guardar)
+Archivo --> FileSystem : writeFile()
+
+@enduml
+

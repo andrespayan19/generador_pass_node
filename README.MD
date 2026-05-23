@@ -7,6 +7,10 @@
 
 Proyecto desarrollado en Node.js para la generación de contraseñas seguras, orientado al uso de funcionarios o entornos organizacionales que requieran fortalecer sus políticas de seguridad.
 
+## 👨‍💻 Desarrollado por 
+- **Kevin Andres Lopez Martinez**
+- **Jonnier Romero**
+- **Andres Felipe Payan G**
 ---
 
 ## 📌 Información General

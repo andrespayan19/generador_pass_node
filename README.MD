@@ -1,5 +1,4 @@
 # 🔐 Generador de Contraseñas Seguras
-# 🔐 Generador de Contraseñas Seguras
 
 Proyecto desarrollado en Node.js para la generación de contraseñas seguras, orientado al uso de funcionarios o entornos organizacionales que requieran fortalecer sus políticas de seguridad.
 
@@ -138,55 +137,7 @@ Documentación estructurada a partir de notas del líder técnico.
 
 # Diagrama UML
 
-@startuml
-title Generador de Contraseñas Seguras - UML
+![arquitectura](C:\Users\Andres\Documents\UTEDE Programacion de Software\Documenta_tecnic_profesional\REPOSITORIOS\generador_pass_node)
 
-actor Usuario
 
-package "Proyecto Node.js" {
-
-    class Index {
-        +leerParametros()
-        +generarPassword()
-        +mostrarPassword()
-        +guardarPassword()
-    }
-
-    class GeneradorPassword {
-        -longitud : int
-        -usarSimbolos : boolean
-        -usarNumeros : boolean
-        +crearPassword() : string
-    }
-
-    class Archivo {
-        +guardarEnTXT(password)
-    }
-
-    class Consola {
-        +mostrarMensaje()
-    }
-
-    class Chalk {
-        +green(texto)
-    }
-
-    class FileSystem {
-        +writeFile()
-    }
-
-}
-
-Usuario --> Index : Ejecuta npm start
-
-Index --> GeneradorPassword : Solicita contraseña
-GeneradorPassword --> GeneradorPassword : Genera caracteres aleatorios
-
-Index --> Consola : Mostrar contraseña
-Consola --> Chalk : Aplicar color verde
-
-Index --> Archivo : Guardar contraseña\n(si usa --guardar)
-Archivo --> FileSystem : writeFile()
-
-@enduml
 

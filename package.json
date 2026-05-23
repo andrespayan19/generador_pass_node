@@ -1,0 +1,13 @@
+{
+  "name": "generador-pass-node",
+  "version": "1.0.0",
+  "description": "Generador de Contraseñas Seguras",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2"
+  }
+}

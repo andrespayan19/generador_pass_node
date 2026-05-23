@@ -137,7 +137,7 @@ Documentación estructurada a partir de notas del líder técnico.
 
 # Diagrama UML
 
-![arquitectura](C:\Users\Andres\Documents\UTEDE Programacion de Software\Documenta_tecnic_profesional\REPOSITORIOS\generador_pass_node)
+![arquitectura](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/andrespayan19/generador_pass_node/refs/heads/feature/docs/arquitectura.puml)
 
 
 

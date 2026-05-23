@@ -1,51 +1,45 @@
 @startuml
-title Generador de Contraseñas Seguras - UML
+title Caso de Uso - Generador de Contraseñas Seguras
 
-actor Usuario
+left to right direction
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
 
-package "Proyecto Node.js" {
+actor "Usuario" as Usuario
+actor "Administrador\n/ Funcionario" as Admin
 
-    class Index {
-        +leerParametros()
-        +generarPassword()
-        +mostrarPassword()
-        +guardarPassword()
-    }
+rectangle "Sistema Generador de Contraseñas Seguras" {
 
-    class GeneradorPassword {
-        -longitud : int
-        -usarSimbolos : boolean
-        -usarNumeros : boolean
-        +crearPassword() : string
-    }
-
-    class Archivo {
-        +guardarEnTXT(password)
-    }
-
-    class Consola {
-        +mostrarMensaje()
-    }
-
-    class Chalk {
-        +green(texto)
-    }
-
-    class FileSystem {
-        +writeFile()
-    }
+    usecase "Generar contraseña" as UC1
+    usecase "Configurar longitud\nde contraseña" as UC2
+    usecase "Incluir símbolos" as UC3
+    usecase "Incluir números" as UC4
+    usecase "Visualizar contraseña\ngenerada" as UC5
+    usecase "Guardar contraseña\nen archivo" as UC6
+    usecase "Validar unicidad\nde contraseñas" as UC7
+    usecase "Ejecutar pruebas\nde seguridad" as UC8
+    usecase "Mostrar resultado\nen consola con chalk" as UC9
 
 }
 
-Usuario --> Index : Ejecuta npm start
+Usuario --> UC1
+Usuario --> UC2
+Usuario --> UC3
+Usuario --> UC4
+Usuario --> UC5
+Usuario --> UC6
 
-Index --> GeneradorPassword : Solicita contraseña
-GeneradorPassword --> GeneradorPassword : Genera caracteres aleatorios
+Admin --> UC7
+Admin --> UC8
 
-Index --> Consola : Mostrar contraseña
-Consola --> Chalk : Aplicar color verde
+UC1 .> UC2 : <<include>>
+UC1 .> UC3 : <<include>>
+UC1 .> UC4 : <<include>>
+UC1 .> UC5 : <<include>>
+UC5 .> UC9 : <<include>>
 
-Index --> Archivo : Guardar contraseña\n(si usa --guardar)
-Archivo --> FileSystem : writeFile()
+UC6 .> UC1 : <<extend>>
+
+UC8 .> UC7 : <<include>>
 
 @enduml
